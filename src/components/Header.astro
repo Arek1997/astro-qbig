@@ -1,0 +1,55 @@
+<header
+  class="relative isolate flex h-screen w-full items-center justify-center overflow-hidden"
+>
+  <div
+    class="hero-image absolute inset-0 z-[-1] animate-headerMove bg-cover bg-center"
+  >
+  </div>
+
+  <div
+    class="text-wrapper flex flex-col items-center justify-center gap-10 text-center text-slate-100"
+  >
+    <h1 class="text-8xl font-bold md:text-[150px]">
+      <span class="text-[150px] text-red md:text-[200px]">Q</span>big
+    </h1>
+    <p class="text-lg font-bold md:text-3xl">Automatyka i robotyka</p>
+    <a
+      href="#offer"
+      class="rounded-lg bg-red px-10 py-4 text-lg uppercase transition-colors duration-300 hover:bg-black"
+      >Oferta</a
+    >
+    <a href="#offer">
+      <img
+        src="/down-arrow.svg"
+        alt="Arrow down icon"
+        class="absolute bottom-6 left-1/2 h-6 w-6 -translate-x-1/2 animate-customBounce"
+      />
+    </a>
+  </div>
+</header>
+
+<style>
+  .text-wrapper h1 {
+    text-shadow: 0 0 15px black;
+  }
+
+  .hero-image {
+    background-image: linear-gradient(
+        to bottom,
+        hsla(0, 0%, 0%),
+        hsla(0, 0%, 0%, 0.5)
+      ),
+      url("/images/headersmall.jpg");
+  }
+
+  @media (min-width: 768px) {
+    .hero-image {
+      background-image: linear-gradient(
+          to bottom,
+          hsla(0, 0%, 0%),
+          hsla(0, 0%, 0%, 0.5)
+        ),
+        , url("/images/headerbig.jpg");
+    }
+  }
+</style>
