@@ -1,4 +1,6 @@
-<nav class="fixed left-0 top-0 h-14 w-full bg-black/90">
+<nav
+  class="fixed left-0 top-0 h-[var(--navigation-height)] w-full bg-black/90 md:shadow-2xl"
+>
   <div
     class="navigation container flex h-full items-center justify-between text-slate-100"
   >
@@ -8,9 +10,101 @@
     <button
       class="burger-button flex cursor-pointer flex-col gap-[6px] p-1 md:hidden"
     >
-      <div class="h-[2px] w-7 bg-slate-100"></div>
-      <div class="h-[2px] w-7 bg-slate-100"></div>
-      <div class="h-[2px] w-7 bg-slate-100"></div>
+      <div
+        class="h-[2px] w-7 bg-slate-100 transition-transform duration-[400ms]"
+      >
+      </div>
+      <div class="h-[2px] w-7 bg-slate-100 transition-opacity duration-[400ms]">
+      </div>
+      <div
+        class="h-[2px] w-7 bg-slate-100 transition-transform duration-[400ms]"
+      >
+      </div>
     </button>
+
+    <div
+      class="menu-wrapper fixed left-0 top-[var(--navigation-height)] flex h-screen w-full -translate-x-full items-center justify-center bg-red bg-bgRedImage bg-cover transition-transform duration-500 md:static md:block md:h-auto md:w-auto md:-translate-x-0 md:bg-transparent md:bg-none"
+    >
+      <ul
+        class="-mt-[var(--navigation-height)] flex flex-col gap-5 p-4 text-3xl uppercase text-slate-100 md:-mt-0 md:flex-row md:gap-10 md:p-0 md:text-base"
+      >
+        <li>
+          <a
+            class="link relative md:transition-colors md:duration-300 md:hover:text-red"
+            href="#offer">Oferta</a
+          >
+        </li>
+        <li>
+          <a
+            class="link relative md:transition-colors md:duration-300 md:hover:text-red"
+            href="#projects">Projekty</a
+          >
+        </li>
+        <li>
+          <a
+            class="link relative md:transition-colors md:duration-300 md:hover:text-red"
+            href="#gallery">Galeria</a
+          >
+        </li>
+        <li>
+          <a
+            class="link relative md:transition-colors md:duration-300 md:hover:text-red"
+            href="#aboutus">O firmie</a
+          >
+        </li>
+        <li>
+          <a
+            class="link relative md:transition-colors md:duration-300 md:hover:text-red"
+            href="#contact">Kontakt</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+<style>
+  body.menu-open .burger-button div:nth-child(1) {
+    transform: rotate(-45deg) translate(0px, 8px);
+  }
+  body.menu-open .burger-button div:nth-child(2) {
+    opacity: 0;
+  }
+  body.menu-open .burger-button div:nth-child(3) {
+    transform: rotate(45deg) translate(-2px, -10px);
+  }
+
+  body.menu-open .menu-wrapper {
+    transform: translateX(0);
+  }
+
+  .link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    height: 140%;
+    width: 3px;
+    background-color: #ccc;
+    transition: transform 0.3s ease;
+    transform: translateY(-15%) scaleY(0);
+  }
+
+  @media (min-width: 768px) {
+    .link::before {
+      content: none;
+    }
+  }
+
+  .link:hover::before {
+    transform: translateY(-20%) scaleY(100%);
+  }
+</style>
+
+<script>
+  document
+    .querySelector(".burger-button")
+    ?.addEventListener("click", () =>
+      document.body.classList.toggle("menu-open")
+    );
+</script>
