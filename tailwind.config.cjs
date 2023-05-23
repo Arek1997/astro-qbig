@@ -15,6 +15,54 @@ module.exports = {
       fontFamily: {
         sansSerifSecondary: "Poppins",
       },
+
+      animation: {
+        customBounce: "customBounce 2s ease infinite",
+        headerMove: "headerMove 5s ease-out",
+      },
+
+      keyframes: {
+        customBounce: {
+          "0%": {
+            transform: "translate(-50%, -45px)",
+            "animation-timing-function": "ease-in",
+            opacity: 1,
+          },
+          "24%": {
+            opacity: 1,
+          },
+          "40%": {
+            transform: "translate(-50%, -24px)",
+            "  animation-timing-function": "ease-in",
+          },
+          "65%": {
+            transform: "translate(-50%, -12px)",
+            " animation-timing-function": "ease-in",
+          },
+
+          "25%, 55%, 75%, 87%": {
+            transform: "translate(-50%, 0px)",
+            " animation-timing-function": "ease-out",
+          },
+          "100%": {
+            transform: " translate(-50%, 0px)",
+            " animation-timing-function": "ease-out",
+            opacity: 1,
+          },
+        },
+
+        headerMove: {
+          "0%": {
+            transform: "scale(1.3) translateY(-15px)",
+            "transform-origin": "50% 16%",
+          },
+
+          "100%": {
+            transform: " scale(1) translateY(0)",
+            "  transform-origin": "top",
+          },
+        },
+      },
     },
     container: {
       center: true,
