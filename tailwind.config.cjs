@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        red: "#a40001",
+        red: "var(--red)",
       },
 
       backgroundImage: {
@@ -14,6 +14,10 @@ module.exports = {
 
       fontFamily: {
         sansSerifSecondary: "Poppins",
+      },
+
+      borderRadius: {
+        customRadius: "var(--radius)",
       },
 
       animation: {

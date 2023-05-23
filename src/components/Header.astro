@@ -15,7 +15,7 @@
     <p class="text-lg font-bold md:text-3xl">Automatyka i robotyka</p>
     <a
       href="#offer"
-      class="rounded-lg bg-red px-10 py-4 text-lg uppercase transition-colors duration-300 hover:bg-black"
+      class="rounded-customRadius bg-red px-10 py-4 text-lg uppercase transition-colors duration-300 hover:bg-black"
       >Oferta</a
     >
     <a href="#offer">
@@ -34,22 +34,12 @@
   }
 
   .hero-image {
-    background-image: linear-gradient(
-        to bottom,
-        hsla(0, 0%, 0%),
-        hsla(0, 0%, 0%, 0.5)
-      ),
-      url("/images/headersmall.jpg");
+    background-image: var(--gradient-dark), url("/images/headersmall.jpg");
   }
 
   @media (min-width: 768px) {
     .hero-image {
-      background-image: linear-gradient(
-          to bottom,
-          hsla(0, 0%, 0%),
-          hsla(0, 0%, 0%, 0.5)
-        ),
-        , url("/images/headerbig.jpg");
+      background-image: var(--gradient-dark), url("/images/headerbig.jpg");
     }
   }
 </style>
