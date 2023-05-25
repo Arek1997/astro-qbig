@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         bgRedImage: "var(--background-red-image)",
         bgGridImage: "var(--background-grid-image)",
+        bgGradient: "var(--gradient-dark)",
       },
 
       fontFamily: {
