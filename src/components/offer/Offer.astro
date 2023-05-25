@@ -1,0 +1,98 @@
+---
+import Card from "./Card.astro";
+
+const cards = [
+  {
+    heading: "Transfery maszyn, produktu i technologii",
+    text: "Służymy wsparciem dla klientów transferujących produkty, technologię oraz linie montażowe z krajów unii europejskiej.",
+    image: "/images/offer/truck.jpg",
+  },
+  {
+    heading: "Deklaracje zgodności CE",
+    text: "Zmodernizujemy maszyny i urzadzenia przemysłowe, dostosowując je do potrzeb Dyrektywy maszynowej 2006/42/WE - oznakujemy znakiem CE i wystawimy deklarcję zgodności.",
+    image: "/images/offer/certificate.jpg",
+  },
+  {
+    heading: "Wsparcie techniczne w języu angielskim",
+    text: "Pracownicy firmy mówią w języku angielskim, rozumiejąc słownictwo branżowe i techniczne.",
+    image: "/images/offer/british.jpg",
+  },
+];
+---
+
+<section id="offer" class="bg-slate-50 bg-bgGridImage">
+  <div class="container">
+    <h2
+      class="underline-red mb-40 pt-40 text-center text-5xl font-bold uppercase"
+    >
+      Oferta
+    </h2>
+
+    <div
+      class="offer-top flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-center"
+    >
+      <div class="image-wrapper lg:w-[40%]">
+        <img
+          src="/images/offer/offers-automatic-small.jpg"
+          alt="Maszyna automatyczna na lini produkcyjnej"
+        />
+      </div>
+      <div class="text flex flex-col gap-6 lg:w-[40%]">
+        <p
+          class="rounded-customRadius bg-neutral-400/30 p-6 font-sansSerifSecondary text-neutral-900/90"
+        >
+          Dzięki zaangażowaniu swoich pracowników firma Qbig wypracowała
+          unikatowe rozwiązania w dziedzinie maszyn testujących i kontrolno -
+          pomiarowych, budowane maszyny cechuje łatwość i intuicyjność obsługi,
+          a także bezpieczeństwo użytkowania.
+        </p>
+        <p
+          class="rounded-customRadius bg-neutral-400/30 p-6 font-sansSerifSecondary text-neutral-900/90"
+        >
+          W procesach sterowania, wizualizacji i nadzoru korzystamy zarówno z
+          rozwiązań wykorzystujących moduły <strong>PLC</strong> i panele <strong
+            >HMI</strong
+          >, jak i z zaawansowanych możliwości systemu <strong>LabView</strong> ©.
+        </p>
+        <p
+          class="rounded-customRadius bg-neutral-400/30 p-6 font-sansSerifSecondary text-neutral-900/90"
+        >
+          Wszystkie budowane przez nas urządzenia posiadają znak CE i wykonywane
+          są zgodnie z Dyrektywą Maszynową 2006/42/WE. Urządzenia wyposażone są
+          w osłony oraz zabezpieczenia, które uniemożliwiają dostęp do ruchomych
+          części maszyny.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="offer-cards my-10 grid gap-6 text-center text-slate-100 lg:my-20"
+    >
+      {
+        cards.map((card) => (
+          <Card heading={card.heading} text={card.text} image={card.image} />
+        ))
+      }
+    </div>
+
+    <div class="offer-bottom"></div>
+  </div>
+</section>
+
+<style>
+  .offer-cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .card:nth-child(1) .card-front {
+    background-image: var(--gradient-dark), url("/images/offer/truck.jpg");
+  }
+
+  .card:nth-child(2) .card-front {
+    background-image: var(--gradient-dark), url("/images/offer/certificate.jpg");
+  }
+
+  .card:nth-child(3) .card-front {
+    background-image: var(--gradient-dark), url("/images/offer/british.jpg");
+  }
+</style>

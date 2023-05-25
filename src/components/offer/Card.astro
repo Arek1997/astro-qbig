@@ -1,0 +1,53 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+  image: string;
+}
+
+const { heading, text, image } = Astro.props;
+---
+
+<div class="card relative h-[400px]">
+  <div
+    class="card-front relative h-full rounded-customRadius bg-cover bg-center p-6"
+    style={{ backgroundImage: `var(--gradient-dark), url(${image})` }}
+  >
+    <h3 class="pt-8 text-xl font-bold opacity-80">
+      {heading}
+    </h3>
+    <p class="absolute bottom-7 right-7 opacity-90">Wiecej informacji</p>
+  </div>
+  <div
+    class="card-back absolute inset-0 flex items-center justify-center rounded-customRadius bg-bgGradient p-6 opacity-0"
+  >
+    <p class="">
+      {text}
+    </p>
+  </div>
+</div>
+
+<style>
+  .card {
+    perspective: 1000px;
+  }
+
+  .card:hover .card-front {
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+
+  .card:hover .card-back {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+
+  .card-front,
+  .card-back {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+</style>
