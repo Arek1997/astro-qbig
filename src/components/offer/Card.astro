@@ -16,12 +16,18 @@ const { heading, text, image } = Astro.props;
     <h3 class="pt-8 text-xl font-bold opacity-80">
       {heading}
     </h3>
-    <p class="absolute bottom-7 right-7 opacity-90">Wiecej informacji</p>
+    <p class="absolute bottom-7 right-7 flex items-center opacity-90">
+      <img
+        src="/double-arrow-right.svg"
+        alt="Double arrow right icon"
+        class="w-7"
+      /> Wiecej informacji
+    </p>
   </div>
   <div
     class="card-back absolute inset-0 flex items-center justify-center rounded-customRadius bg-bgGradient p-6 opacity-0"
   >
-    <p class="">
+    <p>
       {text}
     </p>
   </div>

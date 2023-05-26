@@ -23,7 +23,7 @@ const cards = [
 <section id="offer" class="bg-slate-50 bg-bgGridImage">
   <div class="container">
     <h2
-      class="underline-red mb-40 pt-40 text-center text-5xl font-bold uppercase"
+      class="underline-red mb-32 pt-32 text-center text-5xl font-bold uppercase"
     >
       Oferta
     </h2>
@@ -66,7 +66,7 @@ const cards = [
     </div>
 
     <div
-      class="offer-cards my-10 grid gap-6 text-center text-slate-100 lg:my-20"
+      class="offer-cards my-10 grid gap-6 text-center text-slate-100 lg:my-20 lg:justify-center"
     >
       {
         cards.map((card) => (
@@ -75,13 +75,51 @@ const cards = [
       }
     </div>
 
-    <div class="offer-bottom"></div>
+    <div
+      class="offer-bottom flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-center"
+    >
+      <div class="text flex flex-col gap-6 lg:w-[40%]">
+        <p
+          class="rounded-customRadius bg-neutral-400/30 p-6 font-sansSerifSecondary text-neutral-900/90"
+        >
+          By sprostać Państwa oczekiwaniom stworzymy mapę procesu produkcyjnego
+          oraz przeprowadzimy "analizę przyczyn i skutków wad"(FMEA). Analiza
+          <strong>pFMEA</strong> (process Failure Mode and Effects Analysis) jest
+          narzędziem, które pozwoli nam zidentyfikować istniejące oraz potencjalne
+          wady, a także błędy oraz ich przyczyny, dzięki czemu nowo projektowane
+          zautomatyzowane stanowisko zmniejszy lub wyeliminuje ryzyko ich wystąpienia.
+        </p>
+        <p
+          class="rounded-customRadius bg-neutral-400/30 p-6 font-sansSerifSecondary text-neutral-900/90"
+        >
+          W przypadku stanowisk kontrolno - pomiarowych analiza pFMEA pozwala
+          skupić uwagę projektantów na wykrywaniu wad, które niosą za sobą
+          największe ryzyko dla klienta. Budowane stanowiska lub maszyny są
+          dostosowane do standardów panujących w zakładzie. Wykonujemy zabudowy
+          zarówno w oparciu o profile aluminiowe, jak i o konstrukcje spawane z
+          profili stalowych.
+        </p>
+      </div>
+
+      <div class="image-wrapper lg:w-[40%]">
+        <img
+          src="/images/offer/offers-robotic-small.jpg"
+          alt="Maszyna automatyczna na lini produkcyjnej"
+        />
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
   .offer-cards {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  @media (min-width: 992px) {
+    .offer-cards {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+    }
   }
 
   .card:nth-child(1) .card-front {
