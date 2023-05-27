@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.astro"],
+  content: ["./src/**/*.{astro,tsx}"],
   theme: {
     extend: {
       colors: {
         red: "var(--red)",
+      },
+
+      backgroundColor: {
+        bgCustomWhite: "var(--light-white)",
+        bgCustomRed: "var(--red)",
       },
 
       backgroundImage: {
