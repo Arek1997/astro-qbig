@@ -27,6 +27,13 @@ h2 {
   position: relative;
 }
 
+h2.section-heading {
+  padding-top: 128px;
+  margin-bottom: 128px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 h2.underline-red::before,
 h2.underline-white::before {
   content: "";
@@ -50,4 +57,23 @@ h2.underline-white::before {
 .image-wrapper {
   overflow: hidden;
   border-radius: var(--radius);
+}
+
+.white-block {
+  position: absolute;
+  width: 70%;
+  height: 40px;
+  transform: skew(45deg);
+  background-color: var(--light-white);
+  background-image: var(--background-grid-image);
+}
+
+.white-block--left {
+  bottom: 0;
+  left: -50px;
+}
+
+.white-block--right {
+  top: 0;
+  right: -50px;
 }
