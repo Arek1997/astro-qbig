@@ -1,0 +1,69 @@
+.slider-expandable-item {
+  position: relative;
+  flex-grow: 0.7;
+  margin: 2px;
+  height: 600px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: flex-grow 0.7s;
+  isolation: isolate;
+}
+
+.slider-expandable-item.active {
+  flex-grow: 8;
+}
+
+.slider-expandable-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.slider-expandable-item.active::after {
+  opacity: 0;
+}
+
+.slider-expandable-item-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 80%;
+  padding: 1em;
+  text-align: center;
+  transform: translateX(-50%);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.slider-expandable-item.active .slider-expandable-item-text {
+  animation: backgroundColorAnimation 1s 0.3s forwards;
+}
+
+.slider-expandable-item.active .slider-expandable-item-text h3 {
+  display: none;
+}
+
+.slider-expandable-item .slider-expandable-item-text p {
+  opacity: 0;
+}
+
+.slider-expandable-item.active .slider-expandable-item-text p {
+  display: block;
+  animation: opacityAnimation 1s 0.4s forwards;
+}
+
+@keyframes opacityAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundColorAnimation {
+  100% {
+    background-color: hsla(0, 0%, 0%, 0.4);
+  }
+}
