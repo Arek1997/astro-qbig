@@ -1,0 +1,85 @@
+---
+import SliderWrapper from "./sliders/SliderWrapper";
+---
+
+<section
+  id="projects"
+  class="relative overflow-hidden bg-bgCustomRed bg-bgRedImage bg-cover bg-fixed bg-no-repeat pb-32 text-slate-100"
+>
+  <div class="white-block white-block--right"></div>
+  <div class="white-block white-block--left"></div>
+  <div class="container">
+    <h2 class="section-heading underline-white text-center text-5xl">
+      Projekty
+    </h2>
+
+    <div
+      class="projects-top flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-center"
+    >
+      <div class="image-wrapper lg:w-[40%]">
+        <img
+          src="/images/projects/construction-small.jpg"
+          alt="Zdjęcie przedstawia szkic techniczny"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6 lg:w-[40%]">
+        <p
+          class="rounded-customRadius bg-neutral-900/30 p-6 font-sansSerifSecondary"
+        >
+          Nasz dział konstrukcyjny korzysta z jednego z najnowocześniejszych
+          programów <strong>CAD/CAM Creo firmy PTC</strong>, który daje ogromne
+          możliwości modelowania bryłowego i powierzchniowego. Program pozwala
+          na realizację bardzo złożonych projektów, a także umożliwia wymianę
+          plików z innymi programami inżynierskimi. Dzięki temu możemy
+          wykorzystać pliki klientów, co jest szczególnie ważne przy
+          projektowaniu urządzeń pomiarowych lub montażowych.
+        </p>
+
+        <p
+          class="rounded-customRadius bg-neutral-900/30 p-6 font-sansSerifSecondary"
+        >
+          W budowanych przez naszą firmę systemach automatyki integrujemy
+          komponenty róznych producentów, w zalezności od wymagań i specyfikacji
+          dostarczonej przez klienta.
+        </p>
+      </div>
+    </div>
+
+    <SliderWrapper client:only="react" />
+
+    <div
+      class="projects-bottom flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-center"
+    >
+      <div class="image-wrapper lg:w-[40%]">
+        <img
+          src="/images/projects/touch-panel-small.jpg"
+          alt="Zdjęcie przedstawia panel dotykowy"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6 lg:w-[40%]">
+        <p
+          class="rounded-customRadius bg-neutral-900/30 p-6 font-sansSerifSecondary"
+        >
+          Pracujemy ze znanymi markami jak <strong>SIEMENS ®</strong>, <strong
+            >FESTO ®</strong
+          >, <strong>PANASONIC ®</strong>, <strong>SICK</strong>® czy <strong
+            >OMRON ®</strong
+          >. W naszej ofercie klienci wymagający rozwiązań "cost effective"
+          znajdą sprawdzone i potwierdzone wieloletnią praktyką elementy, które
+          są konkurencyjne cenowo, a jednocześnie zachowują wysokie standardy
+          przemysłowe.
+        </p>
+
+        <p
+          class="rounded-customRadius bg-neutral-900/30 p-6 font-sansSerifSecondary"
+        >
+          W budowanych przez naszą firmę systemach automatyki integrujemy
+          komponenty róznych producentów, w zalezności od wymagań i specyfikacji
+          dostarczonej przez klienta.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
