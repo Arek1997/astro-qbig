@@ -50,7 +50,7 @@ h2.underline-red::before {
 }
 
 h2.underline-white::before {
-  background-color: #eee;
+  background-color: var(--light-white);
 }
 
 .rounded-wrapper,
