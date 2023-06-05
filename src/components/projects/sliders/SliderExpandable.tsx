@@ -18,7 +18,7 @@ const SliderExpandable = () => {
 
     const updatedSlides = slides.map((slide, index) => {
       if (index === +selectedSlideIndex && slide.active) {
-        slide.active = !slide.active;
+        slide.active = false;
       } else if (index === +selectedSlideIndex) {
         slide.active = true;
       } else {
