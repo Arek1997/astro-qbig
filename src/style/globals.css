@@ -77,3 +77,10 @@ h2.underline-white::before {
   top: 0;
   right: -50px;
 }
+
+.button-elastic:hover {
+  transform: scale(1.05);
+}
+.button-elastic:active {
+  transform: scale(0.95);
+}
