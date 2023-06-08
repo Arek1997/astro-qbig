@@ -1,0 +1,54 @@
+<footer class="footer relative overflow-hidden bg-bgCustomRed text-slate-200">
+  <div class="white-block white-block--right"></div>
+
+  <div class="container px-10">
+    <h2 class="mb-5 mt-16 text-5xl font-bold">
+      <span class="text-7xl">Q</span>big
+    </h2>
+    <p class="leading-5">
+      Automatyzacja maszyn i procesów nie jest celem samym w sobie, ale służy do
+      optymalizacji produkcji. Dlatego każde rozwiązanie automatyki musi być
+      zintegrowane zarówno z istniejącą infrastrukturą zakładu, jak i z
+      istniejącymi procesami produkcyjnymi.
+    </p>
+
+    <div class="icons my-5 flex gap-5">
+      <a
+        href="https://twitter.com/"
+        class="transition-transform duration-300 hover:-translate-y-1"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="/twitter-icon.svg" class="w-7" alt="Twitter icon" />
+      </a>
+
+      <a
+        href="https://facebook.com/"
+        class="transition-transform duration-300 hover:-translate-y-1"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="/facebook-icon.svg" class="w-7" alt="Facebook icon" />
+      </a>
+
+      <a
+        href="https://instagram.com/"
+        class="transition-transform duration-300 hover:-translate-y-1"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="/instagram-icon.svg" class="w-7" alt="Instagram icon" />
+      </a>
+    </div>
+  </div>
+
+  <p class="border-t-2 border-slate-100 py-3 text-center">
+    © <span class="footer-date"></span> Qbig
+  </p>
+</footer>
+
+<script>
+  document.querySelector(".footer-date")!.textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
