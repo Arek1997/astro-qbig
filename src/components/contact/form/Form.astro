@@ -1,0 +1,103 @@
+<form class="grid gap-5">
+  <fieldset class="relative flex">
+    <input
+      type="text"
+      id="contact-name"
+      name="contact-name"
+      class="p-4"
+      required
+    />
+    <label for="contact-name">Imię i nazwisko</label>
+  </fieldset>
+
+  <fieldset class="relative flex">
+    <input
+      type="text"
+      id="contact-email"
+      name="contact-email"
+      class="p-4"
+      required
+    />
+    <label for="contact-email">Email</label>
+  </fieldset>
+
+  <fieldset class="relative flex">
+    <input
+      type="text"
+      id="contact-phome"
+      name="contact-phome"
+      class="p-4"
+      required
+    />
+    <label for="contact-phome">Telefon</label>
+  </fieldset>
+
+  <fieldset class="relative flex">
+    <input
+      type="text"
+      id="contact-company"
+      name="contact-company"
+      class="p-4"
+      required
+    />
+    <label for="contact-company">Firma</label>
+  </fieldset>
+
+  <fieldset class="relative flex">
+    <textarea
+      id="contact-message"
+      required
+      class="max-h-[300px] min-h-[100px] p-4"></textarea>
+    <label for="message" class="rounded-customRadius backdrop-blur-sm"
+      >Napisz do nas!</label
+    >
+  </fieldset>
+
+  <fieldset>
+    <input id="rodo" class="w-auto" type="checkbox" required />
+    <label for="rodo" class="rodo"
+      >Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z ustawą o
+      ochronie danych osobowych z dnia 29 sierpnia 1997 r. w celu przedstawienia
+      odpowiedzi na wysyłane zapytanie. Podanie danych osobowych jest
+      dobrowolne.</label
+    >
+  </fieldset>
+
+  <button
+    class="button-elastic justify-self-start rounded-customRadius bg-red px-10 py-4 text-lg uppercase text-slate-200 transition-[background-color,transform] duration-300 hover:bg-black"
+    >Wyślij wiadomość</button
+  >
+</form>
+
+<style>
+  label:not(.rodo) {
+    position: absolute;
+    top: 16px;
+    padding: 0 16px;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+  }
+
+  input:focus + label,
+  input:valid + label,
+  textarea:focus + label,
+  textarea:valid + label {
+    transform: translate(10px, -100%);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    border-radius: var(--radius);
+    outline: none;
+  }
+
+  input:focus,
+  input:valid,
+  textarea:focus,
+  textarea:valid {
+    border-color: var(--red);
+  }
+</style>
