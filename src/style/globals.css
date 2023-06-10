@@ -19,7 +19,8 @@ html {
   scroll-padding-top: var(--navigation-height);
 }
 
-body.menu-open {
+body.menu-open,
+body.lightbox-open {
   overflow-y: hidden;
 }
 

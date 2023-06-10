@@ -1,0 +1,115 @@
+<section
+  id="lightbox"
+  class="lightbox fadeIn fixed inset-0 z-[5] hidden bg-black/80 backdrop-blur-sm"
+>
+  <button
+    class="lightbox__close absolute right-[5%] top-[5%] h-[20px] w-[20px] 2xl:h-[30px] 2xl:w-[30px]"
+    data-close
+    aria-label="Close lightbox"
+    title="Close"><img src="/close.svg" alt="Close icon" /></button
+  >
+  <div
+    class="lightbox__image-wrapper mx-auto flex h-full w-[90%] max-w-screen-xl items-center"
+  >
+    <img
+      src=""
+      class="lightbox__image h-[90%] object-contain"
+      data-image
+      alt=""
+    />
+    <button
+      class="lightbox__prev absolute left-[5%] top-1/2 h-[20px] w-[20px] -translate-y-1/2 2xl:h-[30px] 2xl:w-[30px]"
+      data-prev
+      aria-label="Show previous image"
+      title="Previous image"
+      ><img src="/left-arrow.svg" alt="Left arrow icon" /></button
+    >
+    <button
+      class="lightbox__next absolute right-[5%] top-1/2 h-[20px] w-[20px] -translate-y-1/2 2xl:h-[30px] 2xl:w-[30px]"
+      data-next
+      aria-label="Show next image"
+      title="Next image"
+      ><img src="/right-arrow.svg" alt="Right arrow icon" /></button
+    >
+    <span
+      class="lightbox__images-amount absolute bottom-[5%] rounded-customRadius bg-slate-200 p-2 font-bold 2xl:text-2xl"
+      data-images-amount
+      aria-label="Images amount"
+      title="Images amount"></span>
+  </div>
+</section>
+
+<style is:global>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.3s ease !important;
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.3s ease;
+  }
+</style>
+
+<script>
+  import Lightbox from "../../LIghtbox";
+
+  const galleryImages: NodeListOf<HTMLImageElement> = document.querySelectorAll(
+    ".accordion-content img"
+  );
+  const closeLightBox: HTMLButtonElement =
+    document.querySelector("[data-close]")!;
+  const prevImageButton: HTMLButtonElement =
+    document.querySelector("[data-prev]")!;
+  const nextImageButton: HTMLButtonElement =
+    document.querySelector("[data-next]")!;
+
+  const lightbox = new Lightbox("lightbox");
+
+  closeLightBox.addEventListener("click", () => lightbox.closeLightbox());
+  document.addEventListener("keydown", (e) => {
+    if (!document.body.classList.contains("lightbox-open")) {
+      return;
+    }
+
+    switch (e.key) {
+      case "Escape":
+        lightbox.closeLightbox();
+        break;
+
+      case "ArrowLeft":
+        lightbox.prevImage();
+        break;
+
+      case "ArrowRight":
+        lightbox.nextImage();
+        break;
+    }
+  });
+
+  prevImageButton.addEventListener("click", () => lightbox.prevImage());
+  nextImageButton.addEventListener("click", () => lightbox.nextImage());
+
+  galleryImages.forEach((image) => {
+    image.setAttribute("data-lightbox-image", "");
+    image.addEventListener("click", () => lightbox.showLightbox(image));
+  });
+</script>
