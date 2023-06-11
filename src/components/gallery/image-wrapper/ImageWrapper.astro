@@ -1,5 +1,26 @@
+---
+import {
+  Image,
+  ImageComponentLocalImageProps,
+} from "@astrojs/image/components";
+
+interface Props {
+  image: any;
+  alt: string;
+  dataGalleryImageNumber: number;
+  dataGalleryName: string;
+}
+const { image, alt, dataGalleryImageNumber, dataGalleryName } = Astro.props;
+---
+
 <div
   class="h-[250px] w-[250px] cursor-zoom-in overflow-hidden rounded-customRadius transition-transform duration-300 hover:scale-95"
 >
-  <slot />
+  <Image
+    {...image}
+    alt={alt}
+    data-gallery-image-number={dataGalleryImageNumber}
+    data-gallery-name={dataGalleryName}
+    class="h-full w-full object-cover"
+  />
 </div>

@@ -1,28 +1,21 @@
 ---
 import Accordion from "../accordion/Accordion.astro";
 import ImageWrapper from "../image-wrapper/ImageWrapper.astro";
-import { Image } from "@astrojs/image/components";
 
 const images = await Astro.glob(
   "/public/images/gallery/testing-machines/*"
 ).then((files) => files.map((file) => file.default));
-
-const galleryName = "testing-machines";
 ---
 
 <Accordion title="Urządzenie testujące">
   {
     images.map((image, index) => (
-      <ImageWrapper>
-        <Image
-          {...image}
-          width={250}
-          height={250}
-          alt={`Image nr-${index + 1}`}
-          data-gallery-image-number={index}
-          data-gallery-name={galleryName}
-        />
-      </ImageWrapper>
+      <ImageWrapper
+        image={image}
+        alt={`Image nr-${index + 1}`}
+        dataGalleryImageNumber={index}
+        dataGalleryName="testing-machines"
+      />
     ))
   }
 </Accordion>
