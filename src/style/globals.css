@@ -85,3 +85,7 @@ h2.underline-white::before {
 .button-elastic:active {
   transform: scale(0.95);
 }
+
+.active-link {
+  color: var(--red);
+}
