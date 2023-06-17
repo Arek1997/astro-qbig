@@ -30,7 +30,7 @@ export default class ScrollSpy {
           link.classList.remove("active-link")
         );
 
-        activeLink.classList.add("active-link");
+        activeLink?.classList.add("active-link");
       }
     };
 
