@@ -91,3 +91,23 @@ h2.underline-white::before {
     color: var(--red);
   }
 }
+
+.fadeInFromBottom {
+  animation: fadeInFromBottom 1.3s forwards;
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animate] {
+  opacity: 0;
+}
