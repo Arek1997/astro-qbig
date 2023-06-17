@@ -1,5 +1,5 @@
 <nav
-  class="fixed left-0 top-0 z-[1] h-[var(--navigation-height)] w-full bg-black/90 md:shadow-2xl"
+  class="fixed left-0 top-0 z-[2] h-[var(--navigation-height)] w-full bg-black/90 md:shadow-2xl"
 >
   <div
     class="navigation container flex h-full items-center justify-between text-slate-100"
@@ -96,12 +96,21 @@
     }
   }
 
+  .link.active-link::before,
   .link:hover::before {
     transform: translateY(-20%) scaleY(100%);
   }
 </style>
 
 <script>
+  document
+    .querySelectorAll(".link")
+    .forEach((link) =>
+      link.addEventListener("click", () =>
+        document.body.classList.remove("menu-open")
+      )
+    );
+
   document
     .querySelector(".burger-button")
     ?.addEventListener("click", () =>
