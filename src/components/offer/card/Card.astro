@@ -8,7 +8,7 @@ interface Props {
 const { heading, text, image } = Astro.props;
 ---
 
-<div class="card relative h-[400px]">
+<article class="card relative h-[400px]">
   <div
     class="card-front relative h-full rounded-customRadius bg-cover bg-center p-6"
     style={{ backgroundImage: `var(--gradient-dark), url(${image})` }}
@@ -31,7 +31,7 @@ const { heading, text, image } = Astro.props;
       {text}
     </p>
   </div>
-</div>
+</article>
 
 <style>
   .card {

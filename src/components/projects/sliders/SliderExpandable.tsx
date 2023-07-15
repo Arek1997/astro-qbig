@@ -43,7 +43,7 @@ const SliderExpandable = () => {
   return (
     <div className="slider-expandable-wrapper rounded-wrapper flex w-full bg-black p-[2px]">
       {slides.map(({ image, text, active }, i) => (
-        <div
+        <article
           key={i}
           data-slide-index={i}
           onClick={handlerClick}
@@ -54,7 +54,7 @@ const SliderExpandable = () => {
             <h3 className="-rotate-90 text-lg font-bold uppercase">{text}</h3>
             <p className="hidden text-3xl">{text}</p>
           </div>
-        </div>
+        </article>
       ))}
     </div>
   );
