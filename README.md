@@ -18,6 +18,7 @@ App includes:
 
 - Astro
 - React
+- Typescript
 - Tailwind
 - Swiper
 - Prettier
