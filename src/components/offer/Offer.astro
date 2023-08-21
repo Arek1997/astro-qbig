@@ -67,8 +67,8 @@ const cards = [
       class="offer-cards my-10 grid gap-6 text-center text-slate-100 lg:my-20 lg:justify-center"
     >
       {
-        cards.map((card) => (
-          <Card heading={card.heading} text={card.text} image={card.image} />
+        cards.map(({ heading, text, image }) => (
+          <Card heading={heading} text={text} image={image} />
         ))
       }
     </div>
